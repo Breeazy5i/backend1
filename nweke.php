@@ -5,5 +5,5 @@ $isAdmin = true;
 //single line comment
 
 echo "$name <br> is a good boy";
-$fruit["gerald","agbo",]
+$fruit = ["gerald","agbo",];
 ?>
