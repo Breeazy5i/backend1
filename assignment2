@@ -1,0 +1,38 @@
+<?php
+
+function discount($amount, $isuser) {
+    $discount = 0; 
+
+    if ($isuser) {
+        if ($amount < 1500) {
+            $discount = 0.005; 
+        } 
+        if ($amount >= 1500 && $amount < 3000) {
+            $discount = 0.01; 
+        } 
+        if ($amount >= 3000) {
+            $discount = 0.05; 
+        }
+    } else {
+        if ($amount < 1500) {
+            $discount = 0.00; 
+        } 
+        if ($amount >= 1500 && $amount < 3000) {
+            $discount = 0.01; 
+        } 
+        if ($amount >= 3000) {
+            $discount = 0.25; 
+        }
+    }
+
+    $finalAmount = $amount - ($amount * $discount);
+    return $finalAmount;
+}
+
+$purchaseAmount = 150;
+$isUser  = true;
+
+$finalPrice = discount($purchaseAmount, $isUser );
+echo "The final amount after discount is: $" . number_format($finalPrice, 2);
+
+?>
